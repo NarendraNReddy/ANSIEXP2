@@ -28,8 +28,11 @@
 
   - name: install nodejs
     ansible.builtin.dnf:
-      name: nodejs
+      name: "{{item}}"
       state: installed
+      loop:
+      - nodejs
+      - mysql
 
   - name: user add
     ansible.builtin.user:
@@ -49,6 +52,13 @@
       src: /tmp/backend.zip
       dest: /app
       remote_src: yes
+
+  - name: install npm
+    ansible.built.command: npm install
+    args:
+      chdir: /app
+
+         
 
 
 
