@@ -3,7 +3,7 @@
   become: no
   tasks:
   - name: command
-    ansible.builtin.command: "echo 'nnr online for cmd' > cmd.txt"
+    ansible.builtin.command: "echo 'nnr online for cmd' > /tmp/cmd.txt"
 
   - name: shell
-    ansible.builtin.shell: "echo 'nnr online for shell' > shell.txt"
+    ansible.builtin.shell: "echo 'nnr online for shell' > /tmp/shell.txt"
