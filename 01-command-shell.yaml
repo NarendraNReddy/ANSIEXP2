@@ -1,0 +1,9 @@
+- name: shell and command
+  hosts: localhost
+  become: no
+  tasks:
+  - name: command
+    ansible.builtin.command: "echo 'nnr online for cmd' > cmd.txt"
+
+  - name: shell
+    ansible.builtin.shell: "echo 'nnr online for shell' > shell.txt"
