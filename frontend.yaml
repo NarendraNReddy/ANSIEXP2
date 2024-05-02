@@ -23,8 +23,14 @@
       path: /usr/share/nginx/html
       state: directory
 
-  # - name: copy backend file
-  #   ansible.builtin.copy:
-  #     src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-  #     dest: /usr/share/nginx/html     
+  - name: unarchive and download frontend code
+    ansible.builtin.unarchive:
+      src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+      dest: /usr/share/nginx/html
+      remote_src: yes     
+
+
+
+
+    
 
