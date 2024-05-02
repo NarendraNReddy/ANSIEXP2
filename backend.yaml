@@ -88,7 +88,7 @@
       - cryptography
       executable: pip3.9 
 
-   #mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 < /app/schema/backend.sql
+   
   - name: import data into mysql
     community.mysql.mysql_db:
       login_user: root
