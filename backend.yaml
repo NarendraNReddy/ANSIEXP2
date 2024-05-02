@@ -81,12 +81,12 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
   
-  - name: Pip install pymysql
-    ansible.builtin.pip:
-      name:
-      - PyMySQL
-      - cryptography
-      executable: pip3.9 
+  # - name: Pip install pymysql
+  #   ansible.builtin.pip:
+  #     name:
+  #     - PyMySQL
+  #     - cryptography
+  #     executable: pip3.9 
 
   - name: import data base
     community.mysql.mysql_db:
