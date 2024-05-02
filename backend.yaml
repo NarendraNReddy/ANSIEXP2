@@ -88,26 +88,15 @@
       - cryptography
       executable: pip3.9 
 
-  # - name: import data base
-  #   community.mysql.mysql_db:
-  #     loging_user: root
-  #     login_password: "{{mysql_root_password}}"
-  #     login_host: "{{login_host}}"
-  #   target: /app/schema/backend.sql
-  #   state: import
-  #   name: all      
+  - name: import data base
+    community.mysql.mysql_db:
+      login_user: root
+      login_password: "{{ mysql_root_password }}"
+      login_host: "{{ login_host }}"
+      target: /app/schema/backend.sql
+      state: import
+      name: all    
 
-      
-
-   
-  # - name: import data base
-  #   community.mysql.mysql_db:
-  #     login_user: root
-  #     login_password: "{{mysql_root_password}}"
-  #     login_host: "{{login_host}}"
-  #   target: /app/schema/backend.sql
-  #   state: import
-  #   name: all   
       
 
 
