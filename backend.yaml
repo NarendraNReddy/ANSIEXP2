@@ -28,12 +28,21 @@
 
 
   - name: install nodejs
-    ansible.builtin.dnf:
-      name: "{{item}}"
+    ansible.builtin.dnf: # only works for Redhat family
+      name: "{{ item }}"
       state: installed
-      loop:
-      - nodejs
-      - mysql 
+    loop:
+    - nodejs
+    - mysql
+
+
+  # - name: install nodejs
+  #   ansible.builtin.dnf:
+  #     name: "{{item}}"
+  #     state: installed
+  #     loop:
+  #     - nodejs
+  #     - mysql 
 
   - name: user add
     ansible.builtin.user:
