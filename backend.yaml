@@ -95,7 +95,17 @@
       login_host: "{{ login_host }}"
       target: /app/schema/backend.sql
       state: import
-      name: all    
+      name: all   
+
+  - name: reload backend service
+    ansible.builtin.systemd_service:
+      state: reloaded
+
+  - name: start and enabled
+    ansible.builtin.system:
+      name: backend
+      state: started
+      enabled: yes         
 
       
 
